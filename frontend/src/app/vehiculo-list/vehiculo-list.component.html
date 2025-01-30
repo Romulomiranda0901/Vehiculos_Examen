@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Lista de Vehículos</h1>
+
+
+  <button mat-button color="primary" (click)="openCreateDialog()" class="add-vehiculo-btn">
+    Agregar Vehículo
+  </button>
+
+  <table mat-table [dataSource]="vehiculos" class="mat-elevation-z8">
+    <ng-container matColumnDef="placa">
+      <th mat-header-cell *matHeaderCellDef> Placa </th>
+      <td mat-cell *matCellDef="let vehiculo"> {{vehiculo.placa}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef> Marca </th>
+      <td mat-cell *matCellDef="let vehiculo"> {{vehiculo.marca}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef> Modelo </th>
+      <td mat-cell *matCellDef="let vehiculo"> {{vehiculo.modelo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="serie">
+      <th mat-header-cell *matHeaderCellDef> Serie </th>
+      <td mat-cell *matCellDef="let vehiculo"> {{vehiculo.serie}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef> Color </th>
+      <td mat-cell *matCellDef="let vehiculo"> {{vehiculo.color}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let vehiculo" class="acciones-cell">
+        <button mat-button color="accent" (click)="editVehiculo(vehiculo.placa)">Editar</button>
+        <button mat-button color="warn" (click)="deleteVehiculo(vehiculo.placa)">Eliminar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['placa', 'marca', 'modelo', 'serie', 'color', 'acciones']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['placa', 'marca', 'modelo', 'serie', 'color', 'acciones'];"></tr>
+  </table>
+</div>

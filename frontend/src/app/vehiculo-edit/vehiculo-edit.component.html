@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Editar Vehículo</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Placa</mat-label>
+    <input matInput [(ngModel)]="vehiculo.placa" disabled>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Marca</mat-label>
+    <input matInput [(ngModel)]="vehiculo.marca">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Modelo</mat-label>
+    <input matInput [(ngModel)]="vehiculo.modelo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Serie</mat-label>
+    <input matInput [(ngModel)]="vehiculo.serie">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <input matInput [(ngModel)]="vehiculo.color">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button color="primary" (click)="onUpdate()">Actualizar</button>
+</mat-dialog-actions>
